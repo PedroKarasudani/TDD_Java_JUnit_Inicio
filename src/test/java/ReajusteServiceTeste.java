@@ -11,6 +11,7 @@ import br.com.alura.tdd.service.ReajusteService;
 
 public class ReajusteServiceTeste {
     
+    //Se o desempenho for classificado como "A desejar", o reajuste será de 3% do salário atual.
     @Test
     public void reajusteDeveriaSerDeTresPorCentoQuandoDesempenhoForADesejar() {
         ReajusteService service = new ReajusteService();
