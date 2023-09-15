@@ -28,7 +28,7 @@ public class BonusServiceTeste {
     }
 
     @Test
-    void bonus(){
+    void bonusDeveriaSerDezPorCentroParaSalarioExatamenteAteMil(){
         BonusService service = new BonusService();
         BigDecimal bonus = service.calcularBonus(new Funcionario("Pedro", LocalDate.now(), new BigDecimal ("10000")));
 
