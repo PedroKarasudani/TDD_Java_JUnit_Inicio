@@ -3,7 +3,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,6 +23,21 @@ public class ReajusteServiceTeste {
         this.funcionario = new Funcionario("Pedro", LocalDate.now(), new BigDecimal("1000.00"));
     }
 
+    @AfterEach //anotacao que executa depois dos testes
+    void finalizar() {
+        System.out.println("Fim!!");
+    }
+
+    @BeforeAll //executa uma so vez no comeco, nao em cada teste
+    static void antesDeTodos() {
+        System.out.println("Antes de todos!!");
+    }
+
+    @AfterAll //executa uma so vez no final, nao em cada teste
+    static void depoisDeTodos() {
+        System.out.println("Depois de todos!!");
+    }
+    
     //Se o desempenho for classificado como "A desejar", o reajuste será de 3% do salário atual.
     @Test
     public void reajusteDeveriaSerDeTresPorCentoQuandoDesempenhoForADesejar() {      
